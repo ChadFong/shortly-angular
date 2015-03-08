@@ -9,11 +9,19 @@ angular.module('shortly.services', [])
     })
   };
 
-  var postLink = function(url){
+  var postLink = function(link){
     return $http({
       method: 'POST',
       url: '/api/links',
-      data: url
+      data: link
+    })
+  };
+
+  var postIncrement = function(link){
+    $http({
+      method: 'PUT',
+      url: '/api/links',
+      data: link
     })
   };
 
